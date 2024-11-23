@@ -36,13 +36,20 @@ Route::middleware('auth')->group(function () {
     Route::post('/groups/create', [GroupController::class, 'create'])->name('groups.create');
     Route::put('/group/{group}', [GroupController::class, 'update'])->name('group.update');
     Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
-    Route::delete('/tasks/{task}', [TaskController::class, 'deleteTask'])->name('tasks.destroy');
+    Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+    Route::delete('/Creation/{creation}', [AddTaskController::class, 'destroy'])->name('creation.destroy');
+
     Route::patch('/tasks/{task}/mark-as-done', [TaskController::class, 'markAsDone'])->name('task.markAsDone');
     Route::get('/todo_list', [TodoController::class, 'index']);
     Route::post('/todo_list/store', [TodoController::class, 'store'])->name('todos.store');
     Route::delete('/groups/{group}/delete-member/{user}', [ProfileController::class, 'deleteMember'])->name('groups.deleteMember');
     Route::get('/calendar_2', [Calendar_2Controller::class, 'index']);
 
+    Route::get('/calendar-2/create', [Calendar_2Controller::class, 'create'])->name('calendar_2.create');
+    Route::post('/calendar-2/store', [Calendar_2Controller::class, 'store'])->name('calendar_2.store');
+    Route::put('/calendar-2/update/{calendar}', [Calendar_2Controller::class, 'update'])->name('calendar_2.update');
+    Route::delete('/calendar-2/delete/{calendar}', [Calendar_2Controller::class, 'destroy'])->name('calendar_2.destroy');
+    
     Route::get('/task', [AddTaskController::class, 'index']);
 
     Route::get('/groups/Subscription', [GroupController::class, 'subscription'])->name('subscription');
@@ -57,7 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/creations/store', [AddTaskController::class, 'store'])->name('creations.store');
     Route::post('/creations/destroy', [AddTaskController::class, 'destroy'])->name('creations.destroy');
 
-    // Route::resource('todos', TodoController::class);
+    Route::delete('/members/{id}', [GroupController::class, 'destroyMember'])->name('estroyMember');
 
 });
 

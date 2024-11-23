@@ -2,53 +2,60 @@
 
 @section('content')
     <div class="container mx-auto pt-8 flex flex-col items-center gap-5">
-        <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center">Simplifiez
-            votre gestion d'équipe<br> avec Task<span class="text-[#B784B7]">Geek</span></h1>
+        <h1 class="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center">
+            Simplifiez votre gestion d'équipe<br> avec Task<span class="text-[#B784B7]">Geek</span>
+        </h1>
         <p class="mt-6 text-lg text-slate-600 text-center max-w-3xl pb-4 mx-auto">
             Gérez vos équipes, suivez vos tâches et collaborez en toute simplicité.
         </p>
-        
+
         <div class="flex flex-wrap gap-8 items-center mb-12 justify-center">
             <div
-                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#f5d3f5] hover:text-white">
+                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/4 lg:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#eee3ee] hover:text-white">
                 <i class="fas fa-paint-brush text-pink-500 text-3xl mb-2"></i>
-                <p class="text-gray-700 ">Création et design</p>
+                <p class="text-gray-700">Création et design</p>
             </div>
 
             <div
-                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#f5d3f5] hover:text-white">
+                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/4 lg:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#eee3ee] hover:text-white">
                 <i class="fas fa-laptop-code text-purple-500 text-3xl mb-2"></i>
-                <p class="text-gray-700 ">Informatique</p>
+                <p class="text-gray-700">Informatique</p>
             </div>
+
             <div
-                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#f5d3f5] hover:text-white">
+                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/4 lg:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#eee3ee] hover:text-white">
                 <i class="fas fa-briefcase text-green-500 text-3xl mb-2"></i>
-                <p class="text-gray-700 ">Gestion de portfolio</p>
+                <p class="text-gray-700">Gestion de portfolio</p>
             </div>
+
             <div
-                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#f5d3f5] hover:text-white">
+                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/4 lg:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#eee3ee] hover:text-white">
                 <i class="fas fa-bullhorn text-pink-500 text-3xl mb-2"></i>
-                <p class="text-gray-700 ">Marketing</p>
+                <p class="text-gray-700">Marketing</p>
             </div>
+
             <div
-                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#f5d3f5] hover:text-white">
+                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/4 lg:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#eee3ee] hover:text-white">
                 <i class="fas fa-project-diagram text-yellow-500 text-3xl mb-2"></i>
-                <p class="text-gray-700 ">Gestion de projet</p>
+                <p class="text-gray-700">Gestion de projet</p>
             </div>
+
             <div
-                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#f5d3f5] hover:text-white">
+                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/4 lg:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#eee3ee] hover:text-white">
                 <i class="fas fa-users text-teal-500 text-3xl mb-2"></i>
-                <p class="text-gray-700 ">Projets clients</p>
+                <p class="text-gray-700">Projets clients</p>
             </div>
+
             <div
-                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#f5d3f5] hover:text-white">
+                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/4 lg:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#eee3ee] hover:text-white">
                 <i class="fas fa-tasks text-blue-800 text-3xl mb-2"></i>
-                <p class="text-gray-700 ">Gestion des tâches</p>
+                <p class="text-gray-700">Gestion des tâches</p>
             </div>
+
             <div
-                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#f5d3f5] hover:text-white">
+                class="bg-white shadow-md w-full sm:w-1/2 md:w-1/4 lg:w-1/5 flex flex-col items-center rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-[#eee3ee] hover:text-white">
                 <i class="fas fa-user-friends text-red-500 text-3xl mb-2"></i>
-                <p class="text-gray-700 ">Ressources humaines</p>
+                <p class="text-gray-700">Ressources humaines</p>
             </div>
         </div>
 
@@ -58,148 +65,452 @@
         </a>
     </div>
 
-    <div class="text-center flex flex-col items-center justify-center mt-36 gap-24">
-        <h1 class="text-[#E493B3] font-medium sm:text-5xl lg:text-4xl tracking-tight text-center">
-            Plus de 225 000 clients dans le monde <br>nous font confiance
-        </h1>
+<div class="text-center flex flex-col items-center justify-center mt-36 gap-24">
+    <h1 class="text-[#E493B3] font-medium sm:text-5xl lg:text-4xl tracking-tight text-center">
+        Plus de 225 000 clients dans le monde <br>nous font confiance
+    </h1>
 
-        <div class="flex flex-wrap items-center justify-center gap-16 mb-8">
-            <div class="flex items-center justify-center">
-                <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F501406499%2F1197589934553%2F1%2Foriginal.20230426-140955?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C800%2C800&s=655f4409297fc7e5338d35ab02b29a07"
-                    alt="lionsgeek" class="h-24 w-24" />
-            </div>
-            <div class="flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/a/ac/2M_Logo.svg/2560px-2M_Logo.svg.png"
-                    alt="2m" class="h-20 w-28" />
-            </div>
-            <div class="flex items-center justify-center">
-                <img src="https://pbs.twimg.com/media/CaU4YAhUYAAgM2c.jpg" alt="molengeek" class="h-20 w-36" />
-            </div>
-
-            <div class="flex items-center justify-center">
-                <img src="https://www.wbi.be/sites/default/files/2024-08/image_logo_site_wbi.png" alt="wallonie"
-                    class="h-20 w-36" />
-            </div>
-            <div class="flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_login.png" alt="anapec"
-                    class="h-16 w-20" />
-            </div>
-            <div class="flex items-center justify-center">
-                <img src="https://www.wallonie-bruxelles-rdc.org/sites/default/files/Bandeau-APEFE-RDC.jpg" alt="APEFE"
-                    class="h-24 w-40" />
-            </div>
-            <div class="flex items-center justify-center">
-                <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1a/RTBF.be_2010.svg/2560px-RTBF.be_2010.svg.png"
-                    alt="RTBF.be" class="h-14 w-28" />
-            </div>
-
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-16 mb-8">
+        <div class="flex items-center justify-center">
+            <img src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F501406499%2F1197589934553%2F1%2Foriginal.20230426-140955?w=512&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C800%2C800&s=655f4409297fc7e5338d35ab02b29a07" alt="lionsgeek" class="h-24 w-24 md:h-20 md:w-20 lg:h-24 lg:w-24" />
+        </div>
+        <div class="flex items-center justify-center">
+            <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/a/ac/2M_Logo.svg/2560px-2M_Logo.svg.png" alt="2m" class="h-20 w-28 md:h-16 md:w-24 lg:h-20 lg:w-28" />
+        </div>
+        <div class="flex items-center justify-center">
+            <img src="https://pbs.twimg.com/media/CaU4YAhUYAAgM2c.jpg" alt="molengeek" class="h-20 w-36 md:h-16 md:w-28 lg:h-20 lg:w-36" />
         </div>
 
+        <div class="flex items-center justify-center">
+            <img src="https://www.wbi.be/sites/default/files/2024-08/image_logo_site_wbi.png" alt="wallonie" class="h-20 w-36 md:h-16 md:w-28 lg:h-20 lg:w-36" />
+        </div>
+        <div class="flex items-center justify-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_login.png" alt="anapec" class="h-16 w-20 md:h-12 md:w-16 lg:h-16 lg:w-20" />
+        </div>
+        <div class="flex items-center justify-center">
+            <img src="https://www.wallonie-bruxelles-rdc.org/sites/default/files/Bandeau-APEFE-RDC.jpg" alt="APEFE" class="h-24 w-40 md:h-20 md:w-32 lg:h-24 lg:w-40" />
+        </div>
+        <div class="flex items-center justify-center">
+            <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/1/1a/RTBF.be_2010.svg/2560px-RTBF.be_2010.svg.png" alt="RTBF.be" class="h-14 w-28 md:h-12 md:w-24 lg:h-14 lg:w-28" />
+        </div>
     </div>
+</div>
 
-    <div class="w-full flex items-center justify-around gap-10 my-36">
-        <div class="pl-20 rounded-lg">
-            <img src="https://screenrec.com/assets_dist/screenrec/media/multi-project-management-tools/multi-project-management-tools.png"
-                class="rounded-xl w-[47vw] h-[63vh]" alt="">
-        </div>
 
-        <div class="w-[45%] pr-16">
-            <h1 class="text-slate-900 font-extrabold sm:text-5xl lg:text-4xl tracking-tight text-start pb-5">
-                Dopez la collaboration entre équipes et améliorez la productivité
-            </h1>
-            <p class="text-lg font-light text-gray-500 mb-6">
-                Simplifiez la communication entre les équipes afin d'atteindre vos objectifs plus rapidement à l'aide d'un
-                logiciel de gestion des équipes qui maximise la productivité et permet à tous de travailler plus
-                intelligemment, ensembles.
-            </p>
-            <button
-                class="bg-[#B784B7] text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-[#B784B7] transition duration-300">
-                Commencer
-                <i class="fas fa-arrow-right ml-2">
-                </i>
+
+<div class="bg-white text-gray-800">
+    <div class="container mt-28 p-8">
+        <!-- Navigation -->
+        <div class="flex justify-center items-center gap-0 sm:gap-4 mb-8"> <!-- gap-0 pour les écrans 428px et moins -->
+            <button class="px-6 py-2 text-xl bg-pink-50 text-[#B784B7] rounded-full border border-[#B784B7]"
+                onclick="showTab('teams')">
+                Teams
             </button>
+            <button class="px-6 py-2 text-xl text-[#B784B7] rounded-full border border-transparent hover:border-[#B784B7]"
+                onclick="showTab('tasks')">
+                Tasks
+            </button>
+            <button class="px-6 py-2 text-xl text-[#B784B7] rounded-full border border-transparent hover:border-[#B784B7]"
+                onclick="showTab('calendar')">
+                Calendar
+            </button>
+            <button class="px-6 py-2 text-xl text-[#B784B7] rounded-full border border-transparent hover:border-[#B784B7]"
+                onclick="showTab('chat')">
+                Chat
+            </button>
+            <button class="px-6 py-2 text-xl text-[#B784B7] rounded-full border border-transparent hover:border-[#B784B7]"
+                onclick="showTab('reports')">
+                Todo
+            </button>
+        </div>
 
+        <!-- Teams Section -->
+        <div class="tab-content mt-24" id="teams">
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <div class="w-full sm:w-[22%] pr-8">
+                    <h2 class="text-2xl font-bold text-center mb-4">Team Management</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Create and Manage Teams:</span> Build up to 5 free teams, invite members, and assign roles seamlessly.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">User Roles:</span> Distinguish between team owners, members, and task contributors for better collaboration.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Permissions:</span> Define who can create, update, or delete tasks within a team.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-[55%] relative">
+                    <img alt="Team collaboration interface" class="rounded-lg shadow-lg" src="{{ asset('images/Teams.png') }}" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Tasks Section -->
+        <div class="tab-content hidden mt-24" id="tasks">
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <div class="w-full sm:w-[22%] pr-8">
+                    <h2 class="text-2xl font-bold mb-4 text-center">Task Management</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Organize Your Work:</span> Create tasks for yourself or your team with clear deadlines and priorities.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Track Progress:</span> Mark tasks as done and visualize completed work.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Attach Files:</span> Enhance tasks with file uploads for better context.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-[55%] relative">
+                    <img alt="Task management interface" class="rounded-lg shadow-lg" src="{{ asset('images/tasks.png') }}" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="tab-content hidden mt-24" id="calendar">
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <div class="w-full sm:w-[22%] pr-8">
+                    <h2 class="text-2xl font-bold mb-4 text-center">Calendar Integration</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Visualize Tasks:</span> Display tasks and deadlines in a calendar format.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Sync Events:</span> Keep track of team and personal events in one place.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-[55%] relative">
+                    <img alt="Calendar interface" class="rounded-lg shadow-lg" src="{{ asset('images/calendar.png') }}" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="tab-content hidden mt-24" id="chat">
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <div class="w-full sm:w-[22%] pr-8">
+                    <h2 class="text-2xl font-bold mb-4 text-center">Team Communication</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Real-Time Chat:</span> Collaborate with your team instantly through Chatify.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Shared Channels:</span> Discuss tasks and updates within specific team groups.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-[55%] relative">
+                    <img alt="Chat interface" class="rounded-lg shadow-lg" src="{{ asset('images/chat.png') }}" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div class="tab-content hidden mt-24" id="reports">
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <div class="w-full sm:w-[22%] pr-8">
+                    <h2 class="text-2xl font-bold mb-4 text-center">Todo Management</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Todo:</span> Generate detailed todos for operations.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#B784B7] mt-1 mr-2"></i>
+                            <div>
+                                <span class="font-bold">Todo and insights:</span> Out-of-the-box todos and dashboards offer critical insights into your work to ensure your teams are always up to date and set up for success.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full sm:w-[55%] relative">
+                    <img alt="Reports interface" class="rounded-lg shadow-lg" src="{{ asset('images/todo.png') }}" />
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+        }
+    </script>
+
+<div class="w-full flex items-center justify-center gap-10 my-36 flex-col-reverse lg:flex-row">
+    <div class="pl-0 sm:pl-24 rounded-lg w-full lg:w-auto">
+        <img src="https://images.pexels.com/photos/6804077/pexels-photo-6804077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="rounded-xl w-full lg:w-[47vw] h-auto lg:h-[63vh]" alt="Image de collaboration">
+    </div>
+
+    <div class="w-full lg:w-[45%] pr-16 pl-20 sm:pl-0 text-center lg:text-left">
+        <h1 class="text-slate-900 font-extrabold sm:text-5xl lg:text-4xl tracking-tight pb-5">
+            Dopez la collaboration entre équipes et améliorez la productivité
+        </h1>
+        <p class="text-lg font-light text-gray-500 mb-6">
+            Simplifiez la communication entre les équipes afin d'atteindre vos objectifs plus rapidement à l'aide d'un
+            logiciel de gestion des équipes qui maximise la productivité et permet à tous de travailler plus intelligemment,
+            ensemble.
+        </p>
+        <button
+            class="bg-[#B784B7] text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-[#B784B7] transition duration-300">
+            Commencer
+            <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+    </div>
+</div>
 
 
-    <div class="container text-center">
+
+    <div class="container text-center mb-20 mt-10 ">
 
         <h2 class="text-4xl font-bold text-[#E493B3]">Our Plans for Task Management</h2>
-        <div class="flex flex-wrap items-center justify-center w-full text-center">
-            <!-- free plan -->
-            <div class="w-full px-12 md:w-1/2 lg:w-1/3">
-                <div class="flex flex-col rounded border-2 border-[#B784B7] bg-[#B784B7]">
-                    <div class="py-5 text-[#B784B7] bg-white">
-                        <h3>free</h3>
-                        <p class="text-5xl font-bold">
-                            $0</span>
-                        </p>
-                        <p class="text-xs uppercase">Forever</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center px-8 gap-10 sm:gap-36 mx-5 text-zinc-600 mt-20">
+            <!-- Starter Plan -->
+            <div
+                class="flex flex-col items-center bg-[#eee3ee] p-8 rounded-xl shadow-lg w-80 hover:border-[#B784B7] hover:border-4">
+                <div>
+                    <h2 class="font-extrabold text-3xl text-center mb-2">Free</h2>
+                    <p class="opacity-60 text-center">For individuals and small teams</p>
+                    <div class="flex flex-col items-center my-8">
+                        <p class="font-extrabold text-4xl"> $0</p>
+                        <p class="text-sm opacity-60">Forever</p>
                     </div>
-                    <div class="py-5 bg-[#B784B7] text-white rounded-b">
-                        <p>Manage up to 5 teams</p>
-                        <p>Create and assign tasks</p>
-                        <p>Basic calendar integration</p>
-                        <p>Chat with team members</p>
-                        <button
-                            class="px-5 py-2 mt-5 uppercase rounded bg-white text-[#B784B7] font-semibold hover:bg-[#8E7AB5] hover:text-white">
+                </div>
+                <div class="flex flex-col gap-1">
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Manage up to 5 teams</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Create and assign tasks</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>1Basic calendar integration</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Chat with team members</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Basic Support</b>
+                    </p>
+                    <div class="flex justify-center mt-8">
+                        <button class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7] rounded-xl">
                             Get Started
                         </button>
                     </div>
                 </div>
             </div>
-            <!-- standard plan -->
-            <div class="w-full p-4 md:w-1/2 lg:w-1/3 py-20">
-                <div class="flex flex-col rounded">
-                    <div class="py-7 bg-[#B784B7] text-white rounded-t">
-                        <p class="uppercase text-[#f9e3f9] font-extrabold">
-                            Most Popular
-                        </p>
-                        <h3>Standard</h3>
-                        <p class="text-5xl font-bold">
-                            $49.<span class="text-3xl">95</span>
-                        </p>
-                        <p class="text-xs uppercase">Per Month</p>
-                    </div>
-                    <div>
-                        <div class="pt-1 pb-7 bg-[#B784B7] text-white rounded-b">
-                            <p>Feature of the plan</p>
-                            <p>Another feature plan feature</p>
-                            <p>Yet another plan feature</p>
-                            <button
-                                class="px-5 py-2 mt-5 uppercase rounded bg-[#dea2de] text-[#fff] font-semibold hover:bg-[#8E7AB5] hover:text-white">
-                                Get Started
-                            </button>
-                        </div>
+
+            <!-- Pro Plan -->
+            <div
+                class="flex flex-col items-center bg-gradient-to-br from-pink-50 via-[#d5aed5] to-purple-100 p-8 rounded-lg shadow-lg relative border-8 border-[#c997c9] w-96">
+
+                <p
+                    class="mono text-sm absolute -top-4 bg-[#B784B7] text-zinc-100 py-2 px-4 font-bold tracking-wider rounded">
+                    POPULAR
+                </p>
+                <div>
+                    <h2 class="font-extrabold text-3xl text-center mb-2">Pro</h2>
+                    <p class="opacity-60 text-center">For agencies and businesses</p>
+                    <div class="flex flex-col items-center my-8">
+                        <p class="font-extrabold text-4xl">$79</p>
+                        <p class="text-sm opacity-60">/month</p>
                     </div>
                 </div>
-            </div>
-            <!-- advanced plan -->
-            <div class="w-full p-4 md:w-1/2 lg:w-1/3">
-                <div class="flex flex-col rounded border-2 border-[#B784B7] bg-[#B784B7]">
-                    <div class="py-5 text-[#B784B7] bg-white">
-                        <h3>Advanced</h3>
-                        <p class="text-5xl font-bold">
-                            $99.<span class="text-3xl">95</span>
-                        </p>
-                        <p class="text-xs uppercase">Per Month</p>
+                <div class="flex flex-col gap-1">
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Trending Dashboard</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Feature of the plan</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Another feature plan feature</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Yet another plan feature</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Basic Support</b>
+                    </p>
+                    <div class="flex justify-center mt-8">
+                        <button class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7]  rounded-xl">
+                            Get Started
+                        </button>
                     </div>
-                    <div class="py-5 bg-[#B784B7] text-white rounded-b">
-                        <p>Feature of the plan</p>
-                        <p>Another feature plan feature</p>
-                        <p>Yet another plan feature</p>
-                        <button
-                            class="px-5 py-2 mt-5 uppercase rounded bg-white text-[#B784B7] font-semibold hover:bg-[#8E7AB5] hover:text-white">
+                </div>
+
+            </div>
+
+            <div
+                class="flex flex-col items-center bg-[#eee3ee] p-8 rounded-lg shadow-xl w-80 hover:border-[#B784B7] hover:border-4">
+                <div>
+                    <h2 class="font-extrabold text-3xl text-center mb-2">standard</h2>
+                    <p class="opacity-60 text-center">For individuals and small teams</p>
+                    <div class="flex flex-col items-center my-8">
+                        <p class="font-extrabold text-4xl">$45</p>
+                        <p class="text-sm opacity-60">/month</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Trending Dashboard</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Feature of the plan</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Another feature plan feature</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Yet another plan feature</b>
+                    </p>
+                    <p class="flex items-center text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <b>Basic Support</b>
+                    </p>
+                    <div class="flex justify-center mt-8">
+                        <button class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7]  rounded-xl">
                             Get Started
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
-    <footer class="bg-[#fdf0fd] py-5">
+    <footer class="bg-[#eee3ee] py-5">
         <div class="mt-8 text-gray-500 pt-9">
             <div class="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
                 <div class="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
@@ -281,37 +592,37 @@
                             <p class="text-gray-500 font-inter text-[18px] font-semibold">Download the app</p>
                             <div class="flex gap-4 sm:flex-col">
                                 <button type="button"
-                                class="flex items-center justify-center w-40 text-gray-500 bg-transparent border border-gray-500 h-12 rounded-xl">
-                                <div class="mr-3">
-                                    <svg viewBox="0 0 384 512" width="23">
-                                        <path fill="currentColor"
-                                            d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="text-xs">
-                                        Download on the
+                                    class="flex items-center justify-center w-40 text-gray-500 bg-transparent border border-gray-500 h-12 rounded-xl">
+                                    <div class="mr-3">
+                                        <svg viewBox="0 0 384 512" width="23">
+                                            <path fill="currentColor"
+                                                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
+                                            </path>
+                                        </svg>
                                     </div>
-                                    <div class="-mt-1 font-sans text-xl font-semibold">
-                                        App Store
+                                    <div>
+                                        <div class="text-xs">
+                                            Download on the
+                                        </div>
+                                        <div class="-mt-1 font-sans text-xl font-semibold">
+                                            App Store
+                                        </div>
                                     </div>
-                                </div>
-                            </button>
+                                </button>
                                 <button type="button"
-                                class="flex items-center justify-center w-40 text-gray-500 bg-transparent border border-gray-500 h-12 rounded-xl">
-                                <div class="mr-3">
-                                    <i class="fa-brands fa-google-play text-gray-500"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs">
-                                        Download on the
+                                    class="flex items-center justify-center w-40 text-gray-500 bg-transparent border border-gray-500 h-12 rounded-xl">
+                                    <div class="mr-3">
+                                        <i class="fa-brands fa-google-play text-gray-500"></i>
                                     </div>
-                                    <div class="-mt-1 font-sans text-xl font-semibold">
-                                        Google Play
+                                    <div>
+                                        <div class="text-xs">
+                                            Download on the
+                                        </div>
+                                        <div class="-mt-1 font-sans text-xl font-semibold">
+                                            Google Play
+                                        </div>
                                     </div>
-                                </div>
-                            </button>
+                                </button>
                             </div>
                         </div>
                     </div>

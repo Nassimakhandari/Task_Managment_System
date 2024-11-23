@@ -53,11 +53,11 @@
                     <div id="groupsContainer" class="space-y-6">
                         @if (isset($groups) && $groups->count())
                             @foreach ($groups as $group)
-                                <div class="group-div bg-white rounded-xl shadow-md border border-[#B784B7]/20 hover:border-[#B784B7] transition-all duration-300 overflow-hidden"
+                                <div class="group-div  bg-white rounded-xl shadow-md border border-[#B784B7]/20 hover:border-[#B784B7] transition-all duration-300 overflow-hidden"
                                     data-group-id="{{ $group->id }}">
 
                                     <div class="bg-gradient-to-r from-[#B784B7]/10 to-purple-100/30 px-6 py-4">
-                                        <div class="flex justify-between items-center">
+                                        <div class="flex justify-between items-center h-4">
                                             <h2 class="text-lg font-semibold text-[#B784B7] flex items-center">
                                                 <span>{{ $group->name }}</span>
                                             </h2>
@@ -72,37 +72,42 @@
 
                                     <!-- Task Table -->
                                     <div class="task-table ">
-                                        <table class="w-full ml-3  divide-gray-200">
+                                        <table class="w-full  divide-gray-200">
                                             <thead class="">
                                                 <tr
                                                     class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
                                                     <th class="px-6 py-3">Nom</th>
                                                     <th class="px-6 py-3">Description</th>
                                                     <th class="px-6 py-3">Deadline</th>
-                                                    <th class="px-6 py-3">Priorité</th>
+                                                    <th class="px-6 py-3">Start</th>
+                                                    <th class="px-6 py-3">End</th>
                                                     <th class="px-6 py-3">Assigné à</th>
                                                     <th class="px-6 py-3">Statut</th>
                                                 </tr>
                                             </thead>
                                             <tbody class="bg-white divide-y  divide-gray-200 border-t border-gray-200">
                                                 @foreach ($group->tasks as $task)
-                                                    <tr class="hover:bg-gray-50">
-                                                        <td class="px-4  border-l border-gray-200">
-                                                            <div class="flex items-center text-md">
+                                                    <tr class="hover:bg-gray-50 ">
+                                                        <td class="px-4 border-l border-gray-200">
+                                                            <div class="flex items-center text-sm">
                                                                 <i class="fas fa-grip-vertical text-gray-400 mr-3"></i>
                                                                 {{ $task->name }}
                                                             </div>
                                                         </td>
                                                         <td
-                                                            class="px-7  text-sm text-gray-600 border-l border-gray-200">
+                                                            class="px-7 text-sm text-gray-600 border-l border-gray-200">
                                                             {{ $task->description }}
                                                         </td>
-                                                        <td class="px-7  text-sm border-l border-gray-200">
-                                                            {{ $task->deadline }}</td>
+                                                        <td class="px-5  text-sm text-gray-600 border-l border-gray-200">
+                                                            {{ $task->start }}
+                                                        </td>
+                                                        <td class="px-5 text-sm text-gray-600 border-l border-gray-200">
+                                                            {{ $task->end }}
+                                                        </td>
 
-                                                        <td class="px-7  border-l border-gray-200">
+                                                        <td class="px-5 border-l border-gray-200">
                                                             <span
-                                                                class="px-2  text-sm rounded-full
+                                                                class="px-2  text-xs rounded-full
                                                                     @if ($task->priority == 'High') bg-red-100 text-red-800
                                                                     @elseif($task->priority == 'Medium') bg-yellow-100 text-yellow-800
                                                                     @else bg-green-100 text-green-800 @endif">
@@ -110,16 +115,16 @@
                                                             </span>
                                                         </td>
                                                         <td>
-                                                            <div class="px-5 text-sm border-l border-gray-200">
+                                                            <div class="px-4 text-xs border-l border-gray-200">
                                                                 <select id="assignee" name="assignee_id"
-                                                                    class="w-28 p-1  rounded-md text-gray-700 border border-[#B784B7] bg-white focus:ring-2 focus:ring-[#B784B7] focus:border-[#B784B7] transition-all"
+                                                                    class="w-28 p-1 text-xs rounded-md text-gray-700 border border-[#B784B7] bg-white focus:ring-2 focus:ring-[#B784B7] focus:border-[#B784B7] transition-all"
                                                                     required>
-                                                                    <option selected disabled value=""
-                                                                        class="text-xs text-[#B784B7]"><span>Members
-                                                                    </option>
+                                                                    <option value="" disabled selected>Select a
+                                                                        member</option>
                                                                     @foreach ($group->users as $member)
                                                                         <option value="{{ $member->id }}"
-                                                                            class="text-sm text-gray-700" >
+                                                                            class="text-xs text-gray-700"
+                                                                            @if (isset($task) && $task->assignee_id == $member->id) selected @endif>
                                                                             {{ $member->name }}
                                                                         </option>
                                                                     @endforeach
@@ -127,19 +132,19 @@
                                                             </div>
 
                                                         </td>
-                                                        <td class="px-7 pt-[5.5px] border-l border-gray-200">
+                                                        <td class="px-5 pt-[5.6px] border-l border-gray-200">
                                                             <form method="POST"
                                                                 action="{{ route('task.markAsDone', $task->id) }}"
                                                                 onsubmit="handleMarkAsDone(event, this)">
                                                                 @csrf
                                                                 @method('PATCH')
                                                                 <button type="submit"
-                                                                    class="inline-flex items-center px-3 py-1 pt- border border-[#B784B7] text-sm font-medium rounded-md text-[#B784B7] hover:bg-[#B784B7] hover:text-white transition-colors duration-200">
+                                                                    class="inline-flex items-center px-3 py-1 pt- border border-[#B784B7] text-xs font-medium rounded-md text-[#B784B7] hover:bg-[#B784B7] hover:text-white transition-colors duration-200">
                                                                     Mark as Done
                                                                 </button>
                                                             </form>
                                                         </td>
-                                                        <td class="px-6 py-1 border-l border-gray-200">
+                                                        <td class="px-3 py-1 border-l border-gray-200">
                                                             <div class="relative" x-data="{ open: false }">
                                                                 <button @click="open = !open"
                                                                     class="text-gray-400 hover:text-gray-600">
@@ -148,47 +153,114 @@
                                                                 <div x-show="open" @click.away="open = false"
                                                                     class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
                                                                     <button
-                                                                        onclick="openEditTaskModal('{{ $task->id }}')"
+                                                                        onclick="openUpdateTaskModal('{{ $task->id }}')"
                                                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
                                                                         Edit Task
                                                                     </button>
-                                                                    <div x-data="{ open: false }">
-                                                                        <button @click="open = true"
-                                                                            class="text-red-600">Delete</button>
 
-                                                                        <!-- Modal -->
-                                                                        <div x-show="open" @click.away="open = false"
-                                                                            class="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-                                                                            <div class="bg-white rounded-lg p-6 w-1/3">
-                                                                                <h3 class="text-lg">Are you sure you
-                                                                                    want to delete this task?</h3>
-                                                                                <div class="mt-4">
-                                                                                    <button @click="open = false"
-                                                                                        class="px-4 py-2 bg-gray-300 rounded">Cancel</button>
-                                                                                    <button @click="deleteTask(task.id)"
-                                                                                        class="ml-4 px-4 py-2 bg-red-600 text-white rounded">Confirm
-                                                                                        Delete</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                    <form method="POST"
+                                                                        action="{{ route('tasks.destroy', $task->id) }}">
+                                                                        @csrf
+                                                                        @method('DELETE')
+
+                                                                        <button
+                                                                            onclick="openModal('deleteTaskModal', '/tasks/delete/{{ $task->id }}', '{{ $task->id }}')"
+                                                                            class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 w-full text-left">
+                                                                            Delete Task
+                                                                        </button>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </td>
+
                                                     </tr>
+
+
+
+
+
+                                                    <div id="updateTaskModal{{ $task->id }}"
+                                                        class="hidden fixed inset-0 items-center justify-center bg-black bg-opacity-50">
+                                                        <div
+                                                            class="bg-white ml-[35vw] mt-36 rounded-lg shadow-lg p-6 w-1/3">
+                                                            <h2 class="text-lg font-bold mb-4">Update Task</h2>
+                                                            <form id="updateTaskForm{{ $task->id }}"
+                                                                action="{{ route('tasks.update', $task->id) }}"
+                                                                method="POST">
+                                                                @csrf
+                                                                @method('PUT')
+
+                                                                <!-- Task Name -->
+                                                                <input type="text" name="name"
+                                                                    id="taskNameInput{{ $task->id }}"
+                                                                    class="border border-gray-300 rounded p-2 w-full mb-4"
+                                                                    placeholder="Enter task name"
+                                                                    value="{{ $task->name }}" required>
+
+                                                                <!-- Task Description -->
+                                                                <textarea name="description" id="taskDescriptionInput{{ $task->id }}"
+                                                                    class="border border-gray-300 rounded p-2 w-full mb-4" placeholder="Enter task description" required>{{ $task->description }}</textarea>
+
+                                                                <!-- Deadline -->
+                                                                <input type="date" name="deadline"
+                                                                    id="taskDeadlineInput{{ $task->id }}"
+                                                                    class="border border-gray-300 rounded p-2 w-full mb-4"
+                                                                    value="{{ $task->deadline }}" required>
+
+                                                                <!-- Priority -->
+                                                                <select name="priority"
+                                                                    id="taskPriorityInput{{ $task->id }}"
+                                                                    class="border border-gray-300 rounded p-2 w-full mb-4"
+                                                                    required>
+                                                                    <option value="high"
+                                                                        {{ $task->priority == 'high' ? 'selected' : '' }}>
+                                                                        High</option>
+                                                                    <option value="medium"
+                                                                        {{ $task->priority == 'medium' ? 'selected' : '' }}>
+                                                                        Medium</option>
+                                                                    <option value="low"
+                                                                        {{ $task->priority == 'low' ? 'selected' : '' }}>
+                                                                        Low</option>
+                                                                </select>
+
+                                                                <!-- Assignee -->
+                                                                <select name="assignee_id"
+                                                                    id="taskAssigneeInput{{ $task->id }}"
+                                                                    class="border border-gray-300 rounded p-2 w-full mb-4"
+                                                                    required>
+                                                                    @foreach ($group->users as $member)
+                                                                        <option value="{{ $member->id }}"
+                                                                            {{ $task->assignee_id == $member->id ? 'selected' : '' }}>
+                                                                            {{ $member->name }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </select>
+
+
+
+                                                                <div class="flex justify-end space-x-4">
+                                                                    <button type="button"
+                                                                        class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded"
+                                                                        onclick="closeModal('updateTaskModal{{ $task->id }}')">
+                                                                        Cancel
+                                                                    </button>
+                                                                    <button type="submit"
+                                                                        class="px-4 py-2 bg-[#B784B7] hover:bg-[#caadca] text-white rounded">
+                                                                        Update
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 @endforeach
                                             </tbody>
                                         </table>
                                     </div>
 
 
-
-
-
-
                                     <!-- Group Footer -->
                                     <div
-                                        class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
+                                        class="px-6 py-3 bg-gray-50 border-t border-gray-100 flex justify-between items-center">
                                         <button
                                             class="openTaskModalButton inline-flex items-center text-[#B784B7] hover:text-purple-700 transition-colors">
                                             <span class="mr-2">+</span>
@@ -244,6 +316,8 @@
                                 </div>
 
 
+
+
                                 <div id="updateGroupModal{{ $group->id }}"
                                     class="hidden fixed inset-0 items-center justify-center bg-black bg-opacity-50">
                                     <div class="bg-white ml-[35vw] mt-56  rounded-lg shadow-lg p-6 w-1/3">
@@ -263,8 +337,85 @@
                                                     Cancel
                                                 </button>
                                                 <button type="submit"
-                                                    class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
+                                                    class="px-4 py-2 bg-[#B784B7] hover:bg-[#cdadcd] text-white rounded">
                                                     Update
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Create Task Modal -->
+                                <div id="createTaskModal"
+                                    class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+                                    <div class="bg-white rounded-xl p-8 w-[500px] shadow-2xl transform transition-all">
+                                        <h2 class="text-2xl font-bold text-[#B784B7] mb-6 text-center">Créer une Task
+                                        </h2>
+                                        <form id="createTaskForm" action="{{ route('tasks.store') }}" method="POST"
+                                            class="space-y-6">
+                                            @csrf
+                                            <input type="hidden" name="group_id" id="group_id">
+                                            <div>
+                                                <label for="taskName"
+                                                    class="block text-sm font-medium text-gray-700 mb-2">Nom de la
+                                                    Task</label>
+                                                <input type="text" id="taskName" name="name"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all"
+                                                    required>
+                                            </div>
+                                            <div>
+                                                <label for="taskDescription"
+                                                    class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                                                <textarea id="taskDescription" name="description" rows="3"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all"
+                                                    required></textarea>
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="start" class="block text-sm font-medium text-gray-700 mb-2">Start</label>
+                                                <input type="datetime-local" id="start" name="start"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all"
+                                                    min="{{ date('Y-m-d\TH:i') }}" required>
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="end" class="block text-sm font-medium text-gray-700 mb-2">End</label>
+                                                <input type="datetime-local" id="end" name="end"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all"
+                                                    min="{{ date('Y-m-d\TH:i') }}" required>
+                                            </div>
+                                            <div>
+                                                <label for="taskPriority"
+                                                    class="block text-sm font-medium text-gray-700 mb-2">Priorité</label>
+                                                <select id="taskPriority" name="priority"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all appearance-none">
+                                                    <option value="" selected disabled>Choisir la priorité
+                                                    </option>
+                                                    <option value="Low">Low</option>
+                                                    <option value="Medium">Medium</option>
+                                                    <option value="High">High</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label for=""
+                                                    class="block text-sm font-medium text-gray-700 mb-2">Assigné
+                                                    à</label>
+                                                <select id="assignee" name="assignee_id"
+                                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all appearance-none"
+                                                    required>
+                                                    <option value="" disabled selected>Select a member</option>
+                                                    @foreach ($group->users as $member)
+                                                        <option value="{{ $member->id }}">{{ $member->name }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="flex justify-end space-x-3">
+                                                <button type="button" id="closeTaskModal"
+                                                    class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+                                                    Annuler
+                                                </button>
+                                                <button type="submit"
+                                                    class="px-4 py-2 bg-[#B784B7] text-white rounded-lg hover:bg-purple-700 transition-colors">
+                                                    Créer
                                                 </button>
                                             </div>
                                         </form>
@@ -310,59 +461,7 @@
             </div>
         </div>
 
-        <!-- Create Task Modal -->
-        <div id="createTaskModal"
-            class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
-            <div class="bg-white rounded-xl p-8 w-[500px] shadow-2xl transform transition-all">
-                <h2 class="text-2xl font-bold text-[#B784B7] mb-6 text-center">Créer une Task</h2>
-                <form id="createTaskForm" action="{{ route('tasks.store') }}" method="POST" class="space-y-6">
-                    @csrf
-                    <input type="hidden" name="group_id" id="group_id">
-                    <div>
-                        <label for="taskName" class="block text-sm font-medium text-gray-700 mb-2">Nom de la
-                            Task</label>
-                        <input type="text" id="taskName" name="name"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all"
-                            required>
-                    </div>
-                    <div>
-                        <label for="taskDescription"
-                            class="block text-sm font-medium text-gray-700 mb-2">Description</label>
-                        <textarea id="taskDescription" name="description" rows="3"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all"
-                            required></textarea>
-                    </div>
-                    <div>
-                        <label for="taskDeadline" class="block text-sm font-medium text-gray-700 mb-2">Date
-                            d'échéance</label>
-                        <input type="date" id="taskDeadline" name="deadline"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all"
-                            required>
-                    </div>
-                    <div>
-                        <label for="taskPriority"
-                            class="block text-sm font-medium text-gray-700 mb-2">Priorité</label>
-                        <select id="taskPriority" name="priority"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all appearance-none">
-                            <option value="" selected disabled>Choisir la priorité</option>
-                            <option value="Low">Low</option>
-                            <option value="Medium">Medium</option>
-                            <option value="High">High</option>
-                        </select>
-                    </div>
-                    <div class="flex justify-end space-x-3">
-                        <button type="button" id="closeTaskModal"
-                            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-                            Annuler
-                        </button>
-                        <button type="submit"
-                            class="px-4 py-2 bg-[#B784B7] text-white rounded-lg hover:bg-purple-700 transition-colors">
-                            Créer
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+
 
         <!-- Notifications -->
         @if (session('error'))
@@ -379,25 +478,45 @@
 
 
         <script>
-            function deleteTask(taskId) {
-                // You can use AJAX or a form submission for this. Here's an example using fetch:
-                fetch('/tasks/' + taskId, {
-                        method: 'DELETE',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                        }
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            // Reload the page or remove the task from the list
-                            location.reload(); // Example to reload the page
-                        } else {
-                            console.error('Failed to delete task:', response.statusText);
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
+            document.addEventListener('DOMContentLoaded', function() {
+                window.openModal = function(modalId, deleteUrl, taskId) {
+                    const modal = document.getElementById(modalId);
+
+                    // Set the action URL for the form dynamically
+                    document.getElementById('deleteEventForm').action = deleteUrl;
+
+                    // Update modal heading or other text with the task ID
+                    const modalHeading = document.getElementById('modalHeading');
+                    modalHeading.textContent = `Are you sure you want to delete task #${taskId}?`;
+
+                    // Show the modal
+                    modal.style.display = 'block';
+                    document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
+                };
+
+                window.closeModal = function(modalId) {
+                    const modal = document.getElementById(modalId);
+                    modal.style.display = 'none';
+                    document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+                };
+            });
+
+
+            // Function to open the update modal
+            function openUpdateTaskModal(taskId) {
+                // Get the modal by its ID and show it
+                const modal = document.getElementById('updateTaskModal' + taskId);
+                modal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden'); // Prevent background scrolling
             }
+
+            // Function to close the modal
+            function closeModal(taskId) {
+                const modal = document.getElementById('updateTaskModal' + taskId);
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden'); // Allow background scrolling
+            }
+
 
             // update name of grp
             function openModal(modalId, groupId, groupName) {

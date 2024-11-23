@@ -66,7 +66,7 @@ class InvitationController extends Controller
         // Ajouter l'utilisateur au groupe
         $group = $invitation->group;
         $user=auth()->user();
-        $group->users()->attach($user, ['role' => 'member']);
+        $group->users()->attach($user, ['role' => 'owner']);
 
         return redirect()->route('dashboard')->with('success', 'Vous avez rejoint le groupe avec succès !');
     }

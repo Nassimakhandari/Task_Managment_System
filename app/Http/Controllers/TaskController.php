@@ -17,20 +17,23 @@ class TaskController extends Controller
 
     public function store(Request $request)
     {
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'deadline' => 'required|date',
+            'start' => 'required|date',
+            'end' => 'required|date',
             'priority' => 'required|string',
             'assignee_id' => 'nullable|exists:users,id',
             'status' => 'nullable|in:To Do,In Progress,Done',
             'group_id' => 'required|exists:groups,id',
         ]);
-
+        
         Task::create([
             'name' => $request->name,
             'description' => $request->description,
-            'deadline' => $request->deadline,
+           'start' => $request->start,
+            'end' => $request->end,
             'priority' => $request->priority,
             'assignee_id' => $request->assignee_id,
             'status' => $request->status ?? 'To Do',
@@ -39,23 +42,39 @@ class TaskController extends Controller
 
         ]);
         
-        dd($request->assignee_id);
+        // dd($request->all());
+        // dd($request->assignee_id);
         return back();
     }
 
-    public function update(Request $request, Task $task)
+    public function update(Request $request, $id)
     {
-        $validated = $request->validate([
+        // Validate the incoming request data
+        $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'deadline' => 'required|date',
-            'priority' => 'required|in:Low,Medium,High',
+            'priority' => 'required|string|in:high,medium,low',
+            'assignee_id' => 'required|exists:users,id',
+            'status' => 'required|string|in:pending,completed',
         ]);
-
-        $task->update($validated);
-
-        return redirect()->back()->with('success', 'Task updated successfully');
+    
+        // Find the task by ID and update it
+        $task = Task::findOrFail($id);
+        $task->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'start' => $request->start,
+            'end' => $request->end,
+            'priority' => $request->priority,
+            'assignee_id' => $request->assignee_id,
+            'status' => $request->status,
+        ]);
+    
+        // Redirect back with a success message
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully.');
     }
+    
 
    
 
@@ -66,19 +85,21 @@ class TaskController extends Controller
     }
 
 
-    public function deleteTask($taskId)
+    public function destroy($id)
     {
-        \Log::info('Deleting task with ID: ' . $taskId);
-        $task = Task::findOrFail($taskId);
-        
-        // Check if the logged-in user is the task creator
-        if (auth()->user()->id != $task->creator_id) {
-            abort(403, "You don't have permission to delete this task.");
-        }
-        
+        // Find the task by ID
+        $task = Task::findOrFail($id);
+
+        // Optional: Add authorization logic if needed
+        // if (auth()->id() !== $task->user_id) {
+        //     abort(403, 'Unauthorized action.');
+        // }
+
+        // Delete the task
         $task->delete();
-        
-        return back();
+
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Task deleted successfully.');
     }
     public function updateTask(Request $request, $taskId)
     {

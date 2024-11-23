@@ -102,11 +102,11 @@
                                 {{ $taskk->start }}
                             </td>
                             <td class="px-7  text-sm text-gray-600 border-l border-gray-200">
-                                {{ $taskk->end}}
+                                {{ $taskk->end }}
                             </td>
                             <td class="px-7  border-l border-gray-200">
                                 <span
-                                class="px-2  text-xs rounded-full
+                                    class="px-2  text-xs rounded-full
                             @if ($taskk->priority_todo == 'High') bg-red-100 text-red-800
                             @elseif($taskk->priority_todo == 'Medium') bg-yellow-100 text-yellow-800
                             @else bg-green-100 text-green-800 @endif">
@@ -131,18 +131,68 @@
                                     </button>
                                     <div x-show="open" @click.away="open = false"
                                         class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                                        <button onclick="openEditTaskModal('{{ $taskk->id }}')"
+                                        <!-- Button to Open Modal for Task Update -->
+                                        <button onclick="openUpdateTaskModal('{{ $taskk->id }}')"
                                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">
                                             Edit Task
                                         </button>
-                                        <button onclick="deleteTask('{{ $taskk->id }}')"
-                                            class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 w-full text-left">
-                                            Delete Task
-                                        </button>
+
+                                        <form method="POST" action="{{ route('creation.destroy', $taskk->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button onclick="deleteTask('{{ $taskk->id }}')"
+                                                class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 w-full text-left">
+                                                Delete Task
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- Modal for Updating Task -->
+                        <div id="updateTaskModal{{ $taskk->id }}"
+                            class="hidden fixed inset-0 items-center justify-center bg-black bg-opacity-50">
+                            <div class="bg-white ml-[35vw] mt-56 rounded-lg shadow-lg p-6 w-1/3">
+                                <h2 class="text-lg font-bold mb-4">Update Task</h2>
+                                <form action="{{ route('tasks.update', $taskk->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+
+                                    <!-- Task Name -->
+                                    <input type="text" name="name"
+                                        class="border border-gray-300 rounded p-2 w-full mb-4"
+                                        placeholder="Enter new task name" value="{{ $taskk->name }}" required>
+
+                                        <input type="text" name="description"
+                                        class="border border-gray-300 rounded p-2 w-full mb-4"
+                                        placeholder="Enter new task name" value="{{ $taskk->description }}" required>
+
+                                    <!-- Task Priority -->
+                                    <select name="priority" class="border border-gray-300 rounded p-2 w-full mb-4"
+                                        required>
+                                        <option value="high" {{ $taskk->priority == 'high' ? 'selected' : '' }}>High
+                                        </option>
+                                        <option value="medium" {{ $taskk->priority == 'medium' ? 'selected' : '' }}>
+                                            Medium</option>
+                                        <option value="low" {{ $taskk->priority == 'low' ? 'selected' : '' }}>Low
+                                        </option>
+                                    </select>
+
+                                    <div class="flex justify-end space-x-4">
+                                        <button type="button" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded"
+                                            onclick="closeModal('updateTaskModal{{ $taskk->id }}')">
+                                            Cancel
+                                        </button>
+                                        <button type="submit"
+                                            class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
+                                            Update
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     @endforeach
                 </tbody>
             </table>
@@ -158,6 +208,20 @@
         // Function to close the modal
         function closeCreateTaskModal() {
             document.getElementById("createTaskModal").classList.add("hidden");
+        }
+
+
+
+        // Function to Open the Update Task Modal
+        function openUpdateTaskModal(taskId) {
+            document.getElementById('updateTaskModal' + taskId).classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        // Function to Close the Update Task Modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
         }
     </script>
 </div>

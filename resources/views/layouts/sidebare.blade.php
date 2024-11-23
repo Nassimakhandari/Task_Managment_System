@@ -33,7 +33,7 @@
                         </a>
                         <a href="/calendar_2"
                             class="flex items-center px-3 py-2 text-sm text-gray-600 rounded-md hover:bg-gray-100">
-                            <i class="fas fa-calendar mr-3"></i>
+                            <i class="fas fa-table mr-3"></i>
                             Calendar of Teams
                         </a>
                         <a href="/members"

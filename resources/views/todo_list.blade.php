@@ -7,13 +7,13 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 
-    <div class="bg-[#fbf1fb] min-h-screen w-[77.5vw] mt-3 rounded-lg p-8">
+    <div class="bg-gray-50 min-h-screen w-[77.5vw] mt-3 rounded-lg p-8 shadow-lg">
         <div class="container mx-auto">
             <h1 class="text-3xl font-bold text-center mb-8">Task<span class="text-[#B784B7]">Geek</span> Board</h1>
 
             <div class="flex flex-col md:flex-row gap-6">
 
-                <div class="flex-1 bg-[#f6daf6] p-4 rounded-lg shadow">
+                <div class="flex-1 bg-[#eee3ee] p-4 rounded-lg shadow-lg">
                     <h2 class="text-xl font-semibold mb-4">To Do</h2>
                     <ul id="todo-list" class="min-h-[200px] space-y-2">
                         
@@ -34,17 +34,17 @@
                     </ul>
                     
                     <button onclick="openTaskModal('todo')"
-                        class="mt-4 w-full bg-[#B784B7] text-white py-2 px-4 rounded hover:bg-[#e5bbe5] transition duration-300">Add
+                        class="mt-4 w-full bg-[#d3afd3] text-white py-2 px-4 rounded hover:bg-[#e5bbe5] transition duration-300">Add
                         Task</button>
                 </div>
 
-                <div class="flex-1 bg-[#f6daf6] p-4 rounded-lg shadow">
+                <div class="flex-1 bg-[#eee3ee] p-4 rounded-lg shadow-lg">
                     <h2 class="text-xl font-semibold mb-4">In Progress</h2>
                     <ul id="progress-list" class="min-h-[200px] space-y-2">
                     </ul>
                 </div>
 
-                <div class="flex-1 bg-[#f6daf6] p-4 rounded-lg shadow">
+                <div class="flex-1 bg-[#eee3ee] p-4 rounded-lg shadow-lg">
                     <h2 class="text-xl font-semibold mb-4">Done</h2>
                     <ul id="done-list" class="min-h-[200px] space-y-2">
                     </ul>

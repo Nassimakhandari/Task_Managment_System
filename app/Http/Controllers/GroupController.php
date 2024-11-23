@@ -179,4 +179,14 @@ class GroupController extends Controller
         $group->delete();
         return redirect()->route('dashboard')->with('success', 'Group deleted successfully!');
     }
+
+
+    public function destroyMember($id)
+    {
+        $member = User::findOrFail($id); 
+        $member->delete();
+    
+        return redirect()->route('dashboard')->with('success', 'Group deleted successfully!');
+    }
+
 }

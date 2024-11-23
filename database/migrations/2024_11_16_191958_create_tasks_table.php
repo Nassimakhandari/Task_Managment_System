@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->date('deadline');
+            $table->date('start');
+            $table->date('end');
             $table->enum('priority', ['Low', 'Medium', 'High']);
             $table->foreignId('assignee_id')->nullable()->constrained('users');
             $table->enum('status', ['To Do', 'In Progress', 'Done']);
