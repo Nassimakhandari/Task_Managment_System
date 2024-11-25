@@ -30,9 +30,18 @@ class InvitationController extends Controller
             'email' => 'required|email'
         ]);
 
+
+        $user=auth()->user();
+ 
+       $existingMember = $group->users()->where('email', $request->email)->exists();
+        if ($existingMember) {
+            return back();
+        }
+
         $invitation = Invitation::create([
             'group_id' => $group->id,
-            'email' => $request->email
+            'email' => $request->email,
+            'invited_by'=>$user->id
         ]);
 
 
@@ -65,8 +74,8 @@ class InvitationController extends Controller
 
         // Ajouter l'utilisateur au groupe
         $group = $invitation->group;
-        $user=auth()->user();
-        $group->users()->attach($user, ['role' => 'owner']);
+        $user = User::firstOrCreate(['email' => $invitation->email]);
+        $group->users()->attach($user, ['role' => 'member']);
 
         return redirect()->route('dashboard')->with('success', 'Vous avez rejoint le groupe avec succès !');
     }

@@ -27,8 +27,11 @@ class GroupController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(Request $request , Group $group)
     {
+        if (!$group->owner_id === auth()->id() && !$group->users->contains(auth()->id())) {
+            return redirect()->back()->with('error', 'You are not authorized to create tasks in this team.');
+        }
         $request->validate([
             'name' => 'required|string|max:255',
 

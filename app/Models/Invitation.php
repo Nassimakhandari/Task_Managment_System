@@ -9,7 +9,7 @@ class Invitation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['group_id', 'email', 'status'];
+    protected $fillable = ['group_id', 'email', 'status','invited_by'];
 
     public function group()
     {

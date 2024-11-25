@@ -17,16 +17,17 @@
 <body>
     <div class="flex items-center justify-between mx-14 my-3">
         <!-- Logo -->
-        <div class="flex items-center">
+        <div class="flex gap-2 items-center ">
+            <img src="{{ asset('images/trello (1).png') }}" class="w-6 h-6" alt="">
             <h1 class="text-[25px] font-bold">Task<span class="text-[#B784B7]">Geek</span></h1>
         </div>
 
         <!-- Navigation -->
         @if (request()->is('/'))
             <!-- Accueil (Welcome Page) Navigation -->
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-4 ml-14 sm:ml-0">
                 <a href="{{ route('login') }}"
-                    class="px-6 py-2 bg-[#B784B7] text-white rounded-lg hover:bg-[#9f5e7a]">Log In</a>
+                    class="px-6 sm:py-2 py-0.5 bg-[#B784B7] text-sm sm:text-base text-white rounded-lg hover:bg-[#9f5e7a] ">Log In</a>
                 <a href="{{ route('register') }}"
                     class="px-6 py-2 bg-[#B784B7] text-white rounded-lg hover:bg-[#9f5e7a]">Register</a>
             </div>

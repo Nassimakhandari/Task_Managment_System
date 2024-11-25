@@ -37,8 +37,8 @@
                         </div>
                         <div class="flex gap-4 items-center justify-center mr-3">
                             <div class="flex items-center">
-                                <input type="text" placeholder="Search tasks..."
-                                    class="w-72 px-5 py-3 border border-[#B784B7] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-[#B784B7]">
+                                <input type="text" id="search" placeholder="Search tasks..."
+                                    class="w-72 px-5 py-3 border border-[#B784B7] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#ddb9dd] placeholder:text-[#B784B7]">
                             </div>
                             <a href="/chatify" class="relative group  mt-2">
                                 <i
@@ -48,12 +48,41 @@
                             </a>
                         </div>
                     </div>
-
+                    <script>
+                        document.getElementById('search').addEventListener('input', function () {
+                            const searchValue = this.value.toLowerCase(); // Lowercase for case-insensitivity
+                            const groups = document.querySelectorAll('.group-item'); // All group elements
+                    
+                            groups.forEach(group => {
+                                const groupName = group.textContent.toLowerCase(); // Group name text
+                                if (groupName.includes(searchValue)) {
+                                    group.style.display = 'block'; // Show matching group
+                                } else {
+                                    group.style.display = 'none'; // Hide non-matching group
+                                }
+                            });
+                    
+                            // Optional: Add a message if no results match
+                            const noResults = document.getElementById('noResults');
+                            if (!Array.from(groups).some(group => group.style.display === 'block')) {
+                                if (!noResults) {
+                                    const message = document.createElement('div');
+                                    message.id = 'noResults';
+                                    message.textContent = 'No matching groups found.';
+                                    message.className = 'text-gray-500 text-sm text-center mt-4';
+                                    document.getElementById('groupsContainer').appendChild(message);
+                                }
+                            } else if (noResults) {
+                                noResults.remove();
+                            }
+                        });
+                    </script>
+                    
                     <!-- Groups Container -->
                     <div id="groupsContainer" class="space-y-6">
                         @if (isset($groups) && $groups->count())
                             @foreach ($groups as $group)
-                                <div class="group-div  bg-white rounded-xl shadow-md border border-[#B784B7]/20 hover:border-[#B784B7] transition-all duration-300 overflow-hidden"
+                                <div class="group-div group-item bg-white rounded-xl shadow-md border border-[#B784B7]/20 hover:border-[#B784B7] transition-all duration-300 overflow-hidden"
                                     data-group-id="{{ $group->id }}">
 
                                     <div class="bg-gradient-to-r from-[#B784B7]/10 to-purple-100/30 px-6 py-4">
@@ -78,9 +107,9 @@
                                                     class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
                                                     <th class="px-6 py-3">Nom</th>
                                                     <th class="px-6 py-3">Description</th>
-                                                    <th class="px-6 py-3">Deadline</th>
                                                     <th class="px-6 py-3">Start</th>
                                                     <th class="px-6 py-3">End</th>
+                                                    <th class="px-6 py-3">Priority</th>
                                                     <th class="px-6 py-3">Assigné à</th>
                                                     <th class="px-6 py-3">Statut</th>
                                                 </tr>
@@ -121,12 +150,15 @@
                                                                     required>
                                                                     <option value="" disabled selected>Select a
                                                                         member</option>
-                                                                    @foreach ($group->users as $member)
-                                                                        <option value="{{ $member->id }}"
+                                                                    @foreach ($group->users as $user)
+                                                                        @if ($user->pivot->role == ('member'))
+                                                                        <option value="{{ $user->id }}"
                                                                             class="text-xs text-gray-700"
-                                                                            @if (isset($task) && $task->assignee_id == $member->id) selected @endif>
-                                                                            {{ $member->name }}
+                                                                            @if (isset($task) && $task->assignee_id == $user->id) selected @endif>
+                                                                            {{ $user->name }}
                                                                         </option>
+                                                                        @endif
+                             
                                                                     @endforeach
                                                                 </select>
                                                             </div>
@@ -224,17 +256,25 @@
                                                                 </select>
 
                                                                 <!-- Assignee -->
-                                                                <select name="assignee_id"
-                                                                    id="taskAssigneeInput{{ $task->id }}"
-                                                                    class="border border-gray-300 rounded p-2 w-full mb-4"
-                                                                    required>
-                                                                    @foreach ($group->users as $member)
-                                                                        <option value="{{ $member->id }}"
-                                                                            {{ $task->assignee_id == $member->id ? 'selected' : '' }}>
-                                                                            {{ $member->name }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
+                                                                @if(Auth::id() === $group->owner_id)
+                                                                <div class="mb-4">
+                                                                    <x-input-label for="assigned_to" :value="__('Assign to')" />
+                                                                    <select id="assigned_to" name="assigned_to" class="block mt-1 w-full border-[#fff]/25 bg-transparent focus:outline-none focus:ring-0 focus:border-[#fff]/25 text-[#fff] rounded-md shadow-sm">
+                                                                        <option value="" class="text-[#000]">Select team member</option>
+                                                                        @foreach($group->users as $member)
+                                                                            <option value="{{ $member->id }}" class="text-[#000]">
+                                                                                {{ $member->name }} 
+                                                                                @if($member->pivot && $member->pivot->role === 'member')
+                                                                                    (member)
+                                                                                @elseif(!$member->pivot)
+                                                                                    (Invited)
+                                                                                @endif
+                                                                            </option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                                @endif
+                                            
 
 
 
@@ -267,12 +307,12 @@
                                             Ajouter Task
                                         </button>
                                         <div class="flex items-center space-x-4">
-                                            <button class="text-blue-500 hover:text-blue-700 transition-colors"
+                                            <button class="text-[#B784B7] hover:text-blue-700 transition-colors"
                                                 onclick="openModal('updateGroupModal{{ $group->id }}', '{{ route('group.update', $group->id) }}', '{{ $group->id }}')">
                                                 <i class="fas fa-edit"></i>
                                             </button>
 
-                                            <button class="text-red-500 hover:text-red-700 transition-colors"
+                                            <button class="text-[#B784B7] hover:text-red-700 transition-colors"
                                                 onclick="openModal('deleteEvent', '{{ route('group.destroy', $group->id) }}', '{{ $group->id }}')">
                                                 <i class="fa-regular fa-trash-can"></i>
                                             </button>

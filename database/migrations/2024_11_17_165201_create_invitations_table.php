@@ -10,9 +10,10 @@ class CreateInvitationsTable extends Migration
     {
         Schema::create('invitations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('group_id')->constrained()->onDelete('cascade');  // Clé étrangère pour relier avec `groups`
+            $table->foreignId('group_id')->constrained('groups')->onDelete('cascade');  // Clé étrangère pour relier avec `groups`
             $table->string('email');  // L'email de l'utilisateur invité
-            $table->enum('status', ['pending', 'accepted', 'refused'])->default('pending');  // Le statut de l'invitation
+            $table->enum('status', ['pending', 'accepted', 'refused'])->default('pending'); 
+            $table->foreignId('invited_by')->constrained('users')->onDelete('cascade');  // Le statut de l'invitation
             $table->timestamps();
         });
     }

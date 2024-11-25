@@ -365,9 +365,9 @@
                         <b>Basic Support</b>
                     </p>
                     <div class="flex justify-center mt-8">
-                        <button class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7] rounded-xl">
+                        <a href="/dashboard" class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7] rounded-xl">
                             Get Started
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -435,9 +435,9 @@
                         <b>Basic Support</b>
                     </p>
                     <div class="flex justify-center mt-8">
-                        <button class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7]  rounded-xl">
+                        <a href="{{ route('subscription') }}" class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7]  rounded-xl">
                             Get Started
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -500,9 +500,9 @@
                         <b>Basic Support</b>
                     </p>
                     <div class="flex justify-center mt-8">
-                        <button class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7]  rounded-xl">
+                        <a href="{{ route('subscription') }}" class="bg-pink-50  px-4 py-2 border-[#B784B7] border-4 hover:bg-[#B784B7]  rounded-xl">
                             Get Started
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

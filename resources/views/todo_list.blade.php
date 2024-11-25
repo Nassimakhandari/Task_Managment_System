@@ -54,27 +54,28 @@
 
         <!-- Task Modal -->
         <div id="task-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
-            <div class="relative top-20 mx-auto p-5 border w-[35vw] shadow-lg rounded-md bg-white">
-                <h3 class="text-lg font-semibold mb-4">Add New Task</h3>
+            <div class="bg-white rounded-xl p-8 w-[450px] shadow-2xl mt-36 ml-[33vw] transform transition-all ">
+                <h2 class="text-2xl font-bold text-[#B784B7] mb-6 text-center">Créer une Task</h2>
                 <form action="{{ route('todos.store') }}" method="POST">
                     @csrf
+                    <div class="mb-4">
                     <label for="task_name">Task Name</label>
-                    <input type="text" name="task_name" id="task_name" required>
-                
+                    <input type="text" name="task_name" id="task_name"  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all" required>
+                </div>
                     <label for="task_description">Description</label>
-                    <textarea name="task_description" id="task_description"></textarea>
+                    <textarea name="task_description"  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all" id="task_description"></textarea>
                 
                     <label for="task_deadline">Deadline</label>
-                    <input type="date" name="task_deadline" id="task_deadline">
+                    <input type="date" name="task_deadline"  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all" id="task_deadline">
                 
                     <label for="task_priority">Priority</label>
-                    <select name="task_priority" id="task_priority">
+                    <select name="task_priority" id="task_priority"  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B784B7] focus:border-transparent transition-all">
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
                         <option value="High">High</option>
                     </select>
                 
-                    <button type="submit">Save Task</button>
+                    <button type="submit" class="px-4 mt-6 py-2 bg-[#B784B7] text-white rounded-lg hover:bg-purple-700 transition-colors">Save Task</button>
                 </form>
                 
 
